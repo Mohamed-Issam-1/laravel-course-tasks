@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 
-class StudentCourseController extends Controller
+class StudentController extends Controller
 {
     public function index()
     {
-        $students = Student::with('courses')->get();
+        $students = Student::with('course')->get();
 
-        return view('students.courses', compact('students'));
+        return view('students.index', compact('students'));
     }
 }

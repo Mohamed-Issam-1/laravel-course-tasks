@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'Students Page')
+@section('title', 'Students')
 
 @section('content')
-    <h1>Students List</h1>
 
-    @if(count($students) > 0)
-        <ul>
-            @foreach($students as $student)
-                <li>{{ $loop->iteration }}. {{ $student }}</li>
-            @endforeach
-        </ul>
-    @else
-        <p>No students found</p>
-    @endif
+<h1>Students List</h1>
+
+@foreach($students as $student)
+    <p>
+        {{ $student->name }}
+        -
+        {{ $student->course->title }}
+    </p>
+@endforeach
+
 @endsection
